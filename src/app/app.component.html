@@ -3,6 +3,7 @@
   <ul>
     <li *ngFor="let course of courses$ | async">{{course | json}}
       <button (click)="update(course)">Update</button>
+      <button (click)="delete(course)">delete</button>
     </li>
   </ul>
   <button (click)="ngOnDestroy()">Go Offline</button><br>

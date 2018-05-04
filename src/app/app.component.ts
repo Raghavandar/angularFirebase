@@ -37,11 +37,17 @@ export class AppComponent implements OnDestroy {
   }
 
   update(course) {
-    this.dp.object('/courses/1').set(course + 'updated');
+    //this.dp.object('/courses/1').set(course + 'updated');
+
+    //this.dp.object('/courses/1').set({'price': 100, 'title': 'qwerty'});
+
+    this.dp.object('/courses/1').update({'price': 178});  //update() updates ly the property
+
+    //this.dp.object('/courses/1').set({'price': 178}); // modifies the entire object
   }
 
   delete() {
-
+    this.dp.object('/courses/1').remove();
   }
 
   ngOnDestroy() {
